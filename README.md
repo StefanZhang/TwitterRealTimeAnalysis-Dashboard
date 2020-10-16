@@ -1,49 +1,145 @@
-# Data Visualization Project
 
-## Data
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-The data I propose to visualize for my project is self-collected twitter data through Twitter API using Apache Flume and Apache Spark, with the hashtag "DonalTrump" [example here](https://gist.github.com/StefanZhang/a2ba319870c1d8b8135a16cdd4273d32)
 
-## Project Description
 
-This project is based on the results of the "Real-time Sentiment Dashboard with Tweets Presidential Candidates" project that I am working on at the WPI DS504 Bigdata management course, which uses Apache Flume and Apache Spark to construct data pipeline and perform sentiment analysis. 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
 
-## Questions & Tasks
+  <h3 align="center">Twitter Real Time Sentiment Analysis Dashboard</h3>
 
- * Do the majority of people on twitter like Donald? 
- * What are the most frequently used words/phrases in tweets that are in favor of Donald? 
- * What are the most frequently used words/phrases in tweets that are not in favor of Donald? 
- * During what days that people talk about Donald, positive or negative? And what does it potentially related to?
+  <p align="center">
+    Information is crucial to the function of a democratic society where well- informed citizens can make rational political decisions. While in the past political entities were primarily utilizing newspaper and later television to inform the public, with the rise of the Internet and online social media, the political arena has transformed into a more complex structure. So, it is essential to see how people on the Internet, particularly on Twitter, think about the presidential election candidates.
+  </p>
+</p>
 
-## Sketches
 
-* Sentiment Pie Chart
-![P1-3.jpg](https://i.loli.net/2020/09/23/Hsdhl9xKDAQEfuZ.jpg)
 
-This will describe the percentage of people's sentiment towards Donald on twitter. Different color represents positive, negative, and neutral. 
-Mouse hover over the pie chart will display the more detailed information such as the total counts. 
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-* Time vs. Counts
-![P1-4.jpg](https://i.loli.net/2020/09/23/yb42G1TIUPav3hV.jpg)
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-This visualization shows the relationship between time and counts of tweets. I am using different colored lines to represent different sentiment. 
-A menu will be implemented for this project, so user can also select sentiment in this line chart. 
 
-## Schedule of Deliverables
-|Date  | Task | Description |
-|--|--| -- |
-| Week1 | Environment Setup | Configure the web environment, set up database, make sure the CSV is generating/loading properly.
-| Week2 | Create Data Viz I| Create the first version of data viz, including pie chart and line chart. 
-| Week3 | Create Data Viz II | Evaluate the data viz performance, create new viz if necessary. 
-| Week4 | Create Data Viz III | Polish the data viz, add user interaction/menu.
-| Week5 | Finalize Project | Finalize the project, make sure it ready for submission. 
 
-- Configure the web environment: Make sure the web hosting is all set, domain name set up the correct A record points to the web host.
-- Setup database: MySQL is appropriately setup.
-- CSV is generating/loading correctly: Make sure CSV can generate dynamically, and front-end frameworks can have access to them.
-- Create the first version of data viz: Create a pie chart and line chart based on the sketch.
-- Evaluate the data viz performance: Trying to figure out if the current data viz is effective, is there a better way?
-- Polish the data viz: Adjust the details of the data viz, front size is right, things are lined up...
-- Add user interaction/menu: Add interactions/menu accordingly, to enhance the data viz.
-- Finalize the project: Double check everything mentioned above.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo_name`, `twitter_handle`, `email`
+
+
+### Built With
+
+* []()
+* []()
+* []()
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/github_username/repo_name.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=flat-square
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=flat-square
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=flat-square
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=flat-square
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/github_username
+[product-screenshot]: images/screenshot.png
