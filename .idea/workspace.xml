@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/PiChart2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/flaticon/_flaticon.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +30,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -49,14 +49,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602871844042</updated>
-      <workItem from="1602871845967" duration="10985000" />
+      <workItem from="1602871845967" duration="11415000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactor">
+      <created>1602883842868</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602883842868</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1602883841839">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883841839" />
     <state x="700" y="571" width="607" height="347" key="Github.ShareDialog" timestamp="1602883308621">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -65,5 +81,13 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="572" y="331" key="Github.UntrackedFilesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883338795" />
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1602883844980">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883844980" />
+    <state x="486" y="368" width="748" height="664" key="find.popup" timestamp="1602884223476">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="486" y="368" width="748" height="664" key="find.popup/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884223476" />
   </component>
 </project>
