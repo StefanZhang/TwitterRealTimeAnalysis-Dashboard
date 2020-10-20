@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="">
+    <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="Refactor">
+      <change afterPath="$PROJECT_DIR$/counts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/AreaChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/flaticon/_flaticon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/BarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/BarChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/PiChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PiChart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +25,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iyFIFBBRvjihopaZnpcC4X3p9X" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,7 +59,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602871844042</updated>
-      <workItem from="1602871845967" duration="11415000" />
+      <workItem from="1602871845967" duration="12112000" />
+      <workItem from="1603211442350" duration="11391000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor">
       <created>1602883842868</created>
@@ -58,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602883842868</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor">
+      <created>1602884256918</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602884256918</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,10 +87,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1602883841839">
+    <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603224602829">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883841839" />
+    <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224602829" />
+    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1602884318568">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884318568" />
     <state x="700" y="571" width="607" height="347" key="Github.ShareDialog" timestamp="1602883308621">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -81,10 +103,18 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="572" y="331" key="Github.UntrackedFilesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883338795" />
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1602883844980">
+    <state x="2365" y="606" key="NewPhpFileDialog" timestamp="1603224643089">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602883844980" />
+    <state x="2365" y="606" key="NewPhpFileDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224643089" />
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1602884320985">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884320985" />
+    <state x="618" y="594" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602884306796">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="618" y="594" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884306796" />
     <state x="486" y="368" width="748" height="664" key="find.popup" timestamp="1602884223476">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

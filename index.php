@@ -15,6 +15,7 @@
         <script src="js/PiChart.js"></script>
         <script src="js/LineChart.js"></script>
         <script src="js/BarChart.js"></script>
+        <script src="js/AreaChart.js"></script>
     </head>
     <body class="">
         <nav id="sidebar" class="sidebar" role="navigation">
@@ -23,29 +24,12 @@
                 <header class="logo d-none d-md-block">
                     <span>Dashboard</span>
                 </header>
-                <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
-                     looks good, so adding it and enhancing with notifications -->
-                <div class="sidebar-status d-md-none">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="thumb-sm avatar float-right">
-                            <img class="rounded-circle" src="demo/img/people/a5.jpg" alt="...">
-                        </span>
-                        <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
-                             should be used with bg-* and text-* classes for colors -->
-                        <span class="circle bg-warning fw-bold text-gray-dark">
-                            13
-                        </span>
-                        &nbsp;
-                        Philip <strong>Smith</strong>
-                        <b class="caret"></b>
-                    </a>
-                    <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
-                </div>
+
                 <!-- main notification links are placed inside of .sidebar-nav -->
                 <ul class="sidebar-nav">
                     <li class=" active ">
                         <!-- an example of nested submenu. basic bootstrap collapse component -->
-                        <a href="index.html">
+                        <a href="index.php">
                             <span class="icon">
                                 <i class="fi flaticon-home"></i>
                             </span>
@@ -95,7 +79,9 @@
                                     </h4>
                                 </header>
                                 <div class="widget-body p-0">
-                                    <h4 class="fw-semi-bold ml-lg mb-lg">4,232</h4>
+                                    <h4 class="fw-semi-bold ml-lg mb-lg">
+                                        <?php include 'counts.php';?>
+                                    </h4>
                                 </div>
                             </section>
                         </div>
@@ -129,6 +115,19 @@
                         </div>
                     </div>
 
+                    <div class="col-12">
+                        <section class="widget mb-xlg">
+                            <header class="row">
+                                <h5 class="col-sm-5">
+                                    Area  <span class="fw-semi-bold">Chart of the day</span>
+                                </h5>
+                                <div class="col-sm-7" id="main-chart-legend"></div>
+                                <!--                                define line chart here-->
+                                <div id="Area"></div>
+                                <h4>This Area chart displays the count of tweets with respect to time</h4>
+                            </header>
+                        </section>
+                    </div>
                     <div class="col-12">
                         <section class="widget mb-xlg">
                             <header class="row">
@@ -175,6 +174,8 @@
             vegaEmbed('#Pie', PiChart); // Add PieChart
             vegaEmbed('#Line', LineChart); // Add LineChart
             vegaEmbed('#Bar', BarChart); // Add BarChart
+            vegaEmbed('#Area', AreaChart); // Add AreaChart
+
             //document.write();
         </script>
     </body>
