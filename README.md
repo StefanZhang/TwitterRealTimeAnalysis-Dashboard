@@ -116,11 +116,11 @@ Project Link: [https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard]
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/StefanZhang/repo.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/StefanZhang/TwitterRealTimeAnalysis-Dashboard.svg?style=flat-square
 [contributors-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/StefanZhang/repo.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/StefanZhang/TwitterRealTimeAnalysis-Dashboard.svg?style=flat-square
 [forks-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/network/members
-[issues-shield]: https://img.shields.io/github/issues/StefanZhang/repo.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/StefanZhang/TwitterRealTimeAnalysis-Dashboard.svg?style=flat-square
 [issues-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/xiaofeng-stefan-zhang-26709987/
