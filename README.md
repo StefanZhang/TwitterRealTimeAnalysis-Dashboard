@@ -52,20 +52,14 @@ Information is crucial to the function of a democratic society where well- infor
 
 Make sure you have tweets data pipeline setup like [this](https://github.com/StefanZhang/TwitterRealTimeAnalysis).
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
 ### Installation
 
-1. Clone the repo
+1. Clone the repo in a host
 ```sh
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 ```
-2. Install NPM packages
-```sh
-npm install
-```
+2. Export data from MySQL into .csv format using export_csv.php or SQL queries, and put under main directory.
+
 3. End result:
 
 Example here: [Dashboard](https://sentiment.stefanzhang.com/)
