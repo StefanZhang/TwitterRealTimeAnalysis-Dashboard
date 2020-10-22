@@ -12,7 +12,7 @@
   <h3 align="center">Twitter Real Time Sentiment Analysis Dashboard</h3>
 
   <p align="center">
-    This project is the FRONT END analysis implementation for Twitter real time sentiment analysis pipeline, which uses Apache Flume and Apache Spark. 
+    This project is the FRONT END analysis implementation for Twitter real time sentiment analysis pipeline, which uses Apache Flume and Apache Spark. Final Project for WPI 2020 Fall CS573 Data Visualization. 
   </p>
 </p>
 
