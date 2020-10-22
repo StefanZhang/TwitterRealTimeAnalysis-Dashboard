@@ -37,7 +37,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Dashboard Screen Shot][product-screenshot]](https://sentiment.stefanzhang.com/)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -124,5 +124,7 @@ Project Link: [https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard]
 [issues-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/xiaofeng-stefan-zhang-26709987/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://i.loli.net/2020/10/23/aNpbTWYvcQZ8xLM.png
+
+
 
