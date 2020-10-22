@@ -60,9 +60,7 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 ```
 2. Export data from MySQL into .csv format using export_csv.php or SQL queries, and put under main directory.
 
-3. End result:
-
-Example here: [Dashboard](https://sentiment.stefanzhang.com/)
+3. End result: [Dashboard](https://sentiment.stefanzhang.com/)
 
 
 <!-- CONTRIBUTING -->
