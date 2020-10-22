@@ -131,7 +131,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/network
+[forks-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/network/members
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
 [issues-url]: https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
