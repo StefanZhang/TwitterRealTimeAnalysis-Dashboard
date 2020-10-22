@@ -44,8 +44,8 @@ Information is crucial to the function of a democratic society where well- infor
 ### Built With
 
 * CSS, HTML, Javascript
-* [PHP-5.6](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)
-* [MySQL-5.6.49](https://dev.mysql.com/downloads/mysql/5.6.html)
+* [PHP-5.6](https://www.php.net/releases/5_6_40.php)
+* [MySQL-5.6.49](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)
 * [VegaLite-4.16.8](https://vega.github.io/vega-lite/)
 
 <!-- GETTING STARTED -->
