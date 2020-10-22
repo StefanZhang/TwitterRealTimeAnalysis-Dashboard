@@ -12,8 +12,7 @@
   <h3 align="center">Twitter Real Time Sentiment Analysis Dashboard</h3>
 
   <p align="center">
-    This project is the FRONT END analysis implementation for [data pipeline](https://github.com/StefanZhang/TwitterRealTimeAnalysis), which uses Apache Flume and Apache Spark.
-    Information is crucial to the function of a democratic society where well- informed citizens can make rational political decisions. While in the past political entities were primarily utilizing newspaper and later television to inform the public, with the rise of the Internet and online social media, the political arena has transformed into a more complex structure. So, it is essential to see how people on the Internet, particularly on Twitter, think about the presidential election candidates.
+    This project is the FRONT END analysis implementation for [https://github.com/StefanZhang/TwitterRealTimeAnalysis](data pipeline), which uses Apache Flume and Apache Spark. Information is crucial to the function of a democratic society where well- informed citizens can make rational political decisions. While in the past political entities were primarily utilizing newspaper and later television to inform the public, with the rise of the Internet and online social media, the political arena has transformed into a more complex structure. So, it is essential to see how people on the Internet, particularly on Twitter, think about the presidential election candidates.
   </p>
 </p>
 
