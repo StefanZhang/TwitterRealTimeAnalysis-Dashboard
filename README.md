@@ -70,6 +70,8 @@ git clone https://github.com/github_username/repo_name.git
 ```sh
 npm install
 ```
+3. End result
+Example here: sentiment.stefanzhang.com
 
 
 <!-- CONTRIBUTING -->
