@@ -25,5 +25,19 @@ var AreaChart = {
             "title": "Sentiment"
         },
         "tooltip": [{"aggregate":"count", "field": "sentiment", "type": "quantitative"}, {"field": "sentiment", "type": "ordinal"}]
-    }
+    },
+    // "selection": {
+    //     "hours": {
+    //         "type": "single",
+    //         "fields": ["hours"],
+    //         "bind": {
+    //             "input": "range",
+    //             "min": 0,
+    //             "max": 24,
+    //             "step": 1,
+    //             "name": "hours"
+    //         },
+    //         "init": {"hours": 1}
+    //     }
+    // }
 };
