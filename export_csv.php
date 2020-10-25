@@ -8,10 +8,10 @@ $where = 'WHERE 1 ORDER BY 1';
 // filename for export
 $csv_filename = 'tweets.csv';
 // database variables
-$hostname = "localhost";
-$user = "twitter";
-$password = "CR5tsKTJSh3B63Pz";
-$database = "twitter";
+$hostname = "";
+$user = "";
+$password = "";
+$database = "";
 $port = 3306;
 
 $conn = mysqli_connect($hostname, $user, $password, $database, $port);

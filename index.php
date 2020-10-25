@@ -75,7 +75,7 @@
                                 <header class="d-flex justify-content-between flex-wrap">
                                     <h4 class="d-flex align-items-center pb-1 big-stat-title">
                                         <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>
-                                        Total <span class="fw-normal ml-xs">Counts</span>
+                                        Tweets <span class="fw-normal ml-xs">Collected</span>
                                     </h4>
                                 </header>
                                 <div class="widget-body p-0">
@@ -132,12 +132,12 @@
                         <section class="widget mb-xlg">
                             <header class="row">
                                 <h5 class="col-sm-5">
-                                    Line  <span class="fw-semi-bold">Chart for the day</span>
+                                    Line  <span class="fw-semi-bold">Chart for days</span>
                                 </h5>
                                 <div class="col-sm-7" id="main-chart-legend"></div>
 <!--                                define line chart here-->
                                     <div id="Line"></div>
-                                    <h4>This line chart displays the count of tweets with respect to time(hours)</h4>
+                                    <h4>This line chart displays the count of tweets with respect to time</h4>
                             </header>
                         </section>
                     </div>

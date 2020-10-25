@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="Refactor">
-      <change afterPath="$PROJECT_DIR$/counts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/AreaChart.js" afterDir="false" />
+    <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/BarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/BarChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LineChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/PiChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PiChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AreaChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AreaChart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,9 @@
       <option name="presentableId" value="Default" />
       <updated>1602871844042</updated>
       <workItem from="1602871845967" duration="12112000" />
-      <workItem from="1603211442350" duration="11391000" />
+      <workItem from="1603211442350" duration="12541000" />
+      <workItem from="1603230085594" duration="703000" />
+      <workItem from="1603308170863" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor">
       <created>1602883842868</created>
@@ -76,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602884256918</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New data viz, refactor">
+      <created>1603226158098</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603226158098</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,17 +89,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="New data viz, refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="New data viz, refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603224602829">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224602829" />
-    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1602884318568">
+    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1603226157016">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884318568" />
+    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603226157016" />
     <state x="700" y="571" width="607" height="347" key="Github.ShareDialog" timestamp="1602883308621">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -107,10 +113,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2365" y="606" key="NewPhpFileDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224643089" />
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1602884320985">
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603226161499">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884320985" />
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603226161499" />
     <state x="618" y="594" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602884306796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

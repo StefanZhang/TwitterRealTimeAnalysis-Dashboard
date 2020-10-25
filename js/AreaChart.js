@@ -9,11 +9,11 @@ var AreaChart = {
     },
     "encoding": {
         "x": {"timeUnit": "hours", "field": "time",
-                "axis": {"domain": false, "format": "%H", "tickSize": 0}
+                "axis": {"domain": true, "format": "%H", "tickSize": 0}
         },
 
         "y": {"aggregate": "count", "field": "sentiment",
-                "axis": null, "stack": "center"
+            "axis": null, "stack": "center"
         },
         "color": {
             "field": "sentiment",
