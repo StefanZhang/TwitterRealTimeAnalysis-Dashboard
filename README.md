@@ -29,7 +29,6 @@
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
-* [PhpStorm](https://www.jetbrains.com/phpstorm/)
 
 
 
@@ -46,6 +45,7 @@ Information is crucial to the function of a democratic society where well- infor
 * [PHP-5.6](https://www.php.net/releases/5_6_40.php)
 * [MySQL-5.6.49](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)
 * [VegaLite-4.16.8](https://vega.github.io/vega-lite/)
+* [PhpStorm](https://www.jetbrains.com/phpstorm/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
