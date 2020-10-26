@@ -50,11 +50,12 @@ Information is crucial to the function of a democratic society where well- infor
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Make sure you have tweets data pipeline setup like [this](https://github.com/StefanZhang/TwitterRealTimeAnalysis).
+Make sure you have tweets data pipeline setup like [this](https://github.com/StefanZhang/TwitterRealTimeAnalysis). 
+The tweets are saved in the MySQL database and formated correctly.
 
 ### Installation
 
-1. Clone the repo in a host
+1. Clone the repo into a host
 ```sh
 git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 ```
