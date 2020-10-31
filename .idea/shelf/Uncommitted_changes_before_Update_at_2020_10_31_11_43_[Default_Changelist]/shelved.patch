@@ -1,0 +1,370 @@
+Index: js/PiChart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var PiChart = {\r\n    \"width\": 200,\r\n    \"height\": 200,\r\n    \"description\": \"Donut chart with embedded data.\",\r\n    \"data\": {\"url\": \"tweets.csv\"},\r\n\r\n    \"mark\": {\"type\": \"arc\", \"innerRadius\": 30},\r\n    \"transform\": [{\r\n        \"window\": [{\r\n            \"op\": \"count\",\r\n            \"field\": \"sentiment\",\r\n            \"as\": \"Totalsentiment\"\r\n        }],\r\n    },\r\n        {\r\n            \"calculate\": \"datum.sentiment/datum.Totalsentiment * 100\",\r\n            \"as\": \"PercentOfTotal\"\r\n        }],\r\n\r\n    \"encoding\": {\r\n        \"theta\": {\"aggregate\": \"count\", \"field\": \"sentiment\"},\r\n        \"color\": {\r\n            \"field\": \"sentiment\",\r\n            \"type\": \"nominal\",\r\n            \"scale\": {\r\n                \"domain\": [\"VERY_NEGATIVE\", \"NEGATIVE\", \"NEUTRAL\", \"POSITIVE\", \"VERY_POSITIVE\", \"NOT_UNDERSTOOD\"],\r\n                \"range\": [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\", \"#c7c7c7\"]\r\n            },\r\n        },\r\n        \"tooltip\": [{\"aggregate\":\"count\", \"field\": \"sentiment\", \"type\": \"quantitative\"}, {\"field\": \"sentiment\", \"type\": \"ordinal\"}, {\"field\": \"PercentOfTotal\", \"type\": \"ordinal\"}]\r\n    },\r\n\r\n    \"view\": {\"stroke\": null}\r\n    };
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- js/PiChart.js	(revision 662777f3985cae4f9964698d29be4093da5b0bc2)
++++ js/PiChart.js	(date 1604078456509)
+@@ -1,3 +1,5 @@
++
++
+ var PiChart = {
+     "width": 200,
+     "height": 200,
+@@ -5,17 +7,6 @@
+     "data": {"url": "tweets.csv"},
+ 
+     "mark": {"type": "arc", "innerRadius": 30},
+-    "transform": [{
+-        "window": [{
+-            "op": "count",
+-            "field": "sentiment",
+-            "as": "Totalsentiment"
+-        }],
+-    },
+-        {
+-            "calculate": "datum.sentiment/datum.Totalsentiment * 100",
+-            "as": "PercentOfTotal"
+-        }],
+ 
+     "encoding": {
+         "theta": {"aggregate": "count", "field": "sentiment"},
+@@ -27,8 +18,7 @@
+                 "range": ["#003f5c", "#58508d", "#bc5090", "#ff6361", "#ffa600", "#c7c7c7"]
+             },
+         },
+-        "tooltip": [{"aggregate":"count", "field": "sentiment", "type": "quantitative"}, {"field": "sentiment", "type": "ordinal"}, {"field": "PercentOfTotal", "type": "ordinal"}]
++        "tooltip": [{"aggregate":"count", "field": "sentiment", "type": "quantitative"}, {"field": "sentiment", "type": "ordinal"}]
+     },
+-
+     "view": {"stroke": null}
+     };
+\ No newline at end of file
+Index: counts.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n$hostname = \"localhost\";\r\n$user = \"twitter\";\r\n$password = \"CR5tsKTJSh3B63Pz\";\r\n$database = \"twitter\";\r\n$port = 3306;\r\n\r\n$conn = mysqli_connect($hostname, $user, $password, $database, $port);\r\nif (mysqli_connect_errno()) {\r\n    die(\"Failed to connect to MySQL: \" . mysqli_connect_error());\r\n}\r\n\r\n$sql = \"SELECT COUNT(*) AS count FROM Tweets;\";\r\n$result = $conn->query($sql);\r\n\r\nif ($result->num_rows > 0) {\r\n    while($row = $result->fetch_assoc()) {\r\n        $return =  $row[\"count\"];\r\n        echo number_format($return);\r\n    }\r\n} else {\r\n    echo \"NULL\";\r\n}\r\n\r\n$conn->close();
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- counts.php	(revision 662777f3985cae4f9964698d29be4093da5b0bc2)
++++ counts.php	(date 1604004645810)
+@@ -15,11 +15,56 @@
+ 
+ if ($result->num_rows > 0) {
+     while($row = $result->fetch_assoc()) {
+-        $return =  $row["count"];
+-        echo number_format($return);
++        $Total =  $row["count"];
++        echo "Total Count: ";
++        echo number_format($Total);
++        echo "<p>&nbsp</p>";
++    }
++} else {
++    echo "NULL";
++}
++
++$sql2 = "SELECT COUNT(*) AS count FROM Tweets WHERE sentiment = 'NEGATIVE' OR sentiment = 'VERY_NEGATIVE'";
++$result = $conn->query($sql2);
++if ($result->num_rows > 0) {
++    while($row = $result->fetch_assoc()) {
++        $Neg =  $row["count"];
++        echo "Negative: ";
++        echo number_format($Neg/$Total*100);
++        echo "%";
++        echo "<p>&nbsp</p>";
++    }
++} else {
++    echo "NULL";
++}
++
++$sql3 = "SELECT COUNT(*) AS count FROM Tweets WHERE sentiment = 'POSITIVE' OR sentiment = 'VERY_POSITIVE'";
++$result = $conn->query($sql3);
++if ($result->num_rows > 0) {
++    while($row = $result->fetch_assoc()) {
++        $Pos =  $row["count"];
++        echo "Positive: ";
++        echo number_format($Pos/$Total*100);
++        echo "%";
++        echo "<p>&nbsp</p>";
++    }
++} else {
++    echo "NULL";
++}
++
++$sql4 = "SELECT COUNT(*) AS count FROM Tweets WHERE sentiment = 'NEUTRAL'";
++$result = $conn->query($sql4);
++if ($result->num_rows > 0) {
++    while($row = $result->fetch_assoc()) {
++        $Neu =  $row["count"];
++        echo "Neutral: ";
++        echo number_format($Neu/$Total*100);
++        echo "%";
+     }
+ } else {
+     echo "NULL";
+ }
+ 
++
++
+ $conn->close();
+\ No newline at end of file
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <title>Donald Trump Twitter Dashboard -  Analytics </title>\r\n        <link href=\"css/application.min.css\" rel=\"stylesheet\">\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\r\n        <meta name=\"description\" content=\"Donal Trump Twitter Dashboard\">\r\n        <meta name=\"keywords\" content=\"Donal Trump Twitter Dashboard\">\r\n        <meta name=\"author\" content=\"Stefan Zhang\">\r\n        <meta charset=\"utf-8\">\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\r\n        <script src=\"https://cdn.jsdelivr.net/npm/vega@5.16.1\"></script>\r\n        <script src=\"https://cdn.jsdelivr.net/npm/vega-lite@4.16.8\"></script>\r\n        <script src=\"https://cdn.jsdelivr.net/npm/vega-embed@6.12.2\"></script>\r\n        <script src=\"js/PiChart.js\"></script>\r\n        <script src=\"js/LineChart.js\"></script>\r\n        <script src=\"js/BarChart.js\"></script>\r\n        <script src=\"js/AreaChart.js\"></script>\r\n    </head>\r\n    <body class=\"\">\r\n        <nav id=\"sidebar\" class=\"sidebar\" role=\"navigation\">\r\n            <!-- need this .js class to initiate slimscroll -->\r\n            <div class=\"js-sidebar-content\">\r\n                <header class=\"logo d-none d-md-block\">\r\n                    <span>Dashboard</span>\r\n                </header>\r\n\r\n                <!-- main notification links are placed inside of .sidebar-nav -->\r\n                <ul class=\"sidebar-nav\">\r\n                    <li class=\" active \">\r\n                        <!-- an example of nested submenu. basic bootstrap collapse component -->\r\n                        <a href=\"index.php\">\r\n                            <span class=\"icon\">\r\n                                <i class=\"fi flaticon-home\"></i>\r\n                            </span>\r\n                            Main\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n                <h5 class=\"sidebar-nav-title\">Project Status</h5>\r\n                <div class=\"sidebar-alerts\">\r\n                    <div class=\"alert\">\r\n                        <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</a>\r\n                        <span class=\"fw-normal\">Rendering Plots</span> <br>\r\n                        <div class=\"progress progress-xs mt-2\">\r\n                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 65%\" aria-valuenow=\"65\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"alert\">\r\n                        <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</a>\r\n                        <span class=\"fw-normal\">Interaction</span> <br>\r\n                        <div class=\"progress progress-xs mt-2\">\r\n                            <div class=\"progress-bar bg-primary\" role=\"progressbar\" style=\"width: 10%\" aria-valuenow=\"10\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </nav>            <!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->\r\n\r\n  \r\n        <div class=\"content-wrap\">\r\n            <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->\r\n            <main id=\"content\" class=\"content\" role=\"main\">\r\n                <!-- Page content -->\r\n        <h1 class=\"page-title\">\r\n            Donald Trump Twitter Analysis\r\n        </h1>\r\n        <div class=\"analytics\">\r\n            <div class=\"analytics-side\">\r\n                <div class=\"row\">\r\n\r\n                    <div class=\"col-sm-12 col-lg-6 col-xl-4 mb-xlg\">\r\n                        <div class=\"pb-xlg h-100\">\r\n                            <section class=\"widget mb-0 h-100\">\r\n                                <header class=\"d-flex justify-content-between flex-wrap\">\r\n                                    <h4 class=\"d-flex align-items-center pb-1 big-stat-title\">\r\n                                        <span class=\"circle bg-primary mr-sm\" style=\"font-size: 6px;\"></span>\r\n                                        Tweets <span class=\"fw-normal ml-xs\">Collected</span>\r\n                                    </h4>\r\n                                </header>\r\n                                <div class=\"widget-body p-0\">\r\n                                    <h4 class=\"fw-semi-bold ml-lg mb-lg\">\r\n                                        <?php include 'counts.php';?>\r\n                                    </h4>\r\n                                </div>\r\n                            </section>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-sm-12 col-lg-6 col-xl-4 mb-xlg\">\r\n                        <div class=\"pb-xlg h-100\">\r\n                            <section class=\"widget mb-0 h-100\">\r\n                                <header class=\"d-flex justify-content-between flex-wrap\">\r\n                                    <h4 class=\"d-flex align-items-center pb-1 big-stat-title\">\r\n                                        <span class=\"circle bg-primary mr-sm\" style=\"font-size: 6px;\"></span>\r\n                                        With <span class=\"fw-normal ml-xs\">Hashtage</span>\r\n                                    </h4>\r\n                                </header>\r\n                                <div class=\"widget-body p-0\">\r\n                                    <h4 class=\"fw-semi-bold ml-lg mb-lg\">#DonaldTrump, #TheRealDonaldTrump</h4>\r\n                                </div>\r\n                            </section>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-sm-12 col-lg-6 col-xl-4 mb-xlg\">\r\n                        <div class=\"pb-xlg h-100\">\r\n                            <section class=\"widget mb-0 h-100\">\r\n                                <header class=\"d-flex justify-content-between flex-wrap\">\r\n                                    <h4 class=\"d-flex align-items-center pb-1 big-stat-title\">\r\n                                        <span class=\"circle bg-primary mr-sm\" style=\"font-size: 6px;\"></span>\r\n                                        With <span class=\"fw-normal ml-xs\">Sentiment</span>\r\n                                    </h4>\r\n                                </header>\r\n                                <div id=\"Pie\"></div>\r\n                            </section>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"col-12\">\r\n                        <section class=\"widget mb-xlg\">\r\n                            <header class=\"row\">\r\n                                <h5 class=\"col-sm-5\">\r\n                                    Area  <span class=\"fw-semi-bold\">Chart of the day</span>\r\n                                </h5>\r\n                                <div class=\"col-sm-7\" id=\"main-chart-legend\"></div>\r\n                                <!--                                define line chart here-->\r\n                                <div id=\"Area\"></div>\r\n                                <h4>This Area chart displays the count of tweets with respect to time</h4>\r\n                            </header>\r\n                        </section>\r\n                    </div>\r\n                    <div class=\"col-12\">\r\n                        <section class=\"widget mb-xlg\">\r\n                            <header class=\"row\">\r\n                                <h5 class=\"col-sm-5\">\r\n                                    Line  <span class=\"fw-semi-bold\">Chart for days</span>\r\n                                </h5>\r\n                                <div class=\"col-sm-7\" id=\"main-chart-legend\"></div>\r\n<!--                                define line chart here-->\r\n                                    <div id=\"Line\"></div>\r\n                                    <h4>This line chart displays the count of tweets with respect to time</h4>\r\n                            </header>\r\n                        </section>\r\n                    </div>\r\n                    <div class=\"col-12\">\r\n                        <section class=\"widget mb-xlg\">\r\n                            <header class=\"row\">\r\n                                <h5 class=\"col-sm-5\">\r\n                                    Bar  <span class=\"fw-semi-bold\">Chart with Device</span>\r\n                                </h5>\r\n                                <div class=\"col-sm-7\" id=\"main-chart-legend\"></div>\r\n                                <!--                                define line chart here-->\r\n                                <div id=\"Bar\"></div>\r\n                                <h4>This line chart displays the count of tweets with respect to devices</h4>\r\n                            </header>\r\n                        </section>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"analytics-side\">\r\n<!--                can not delete-->\r\n            </div>\r\n        </div>\r\n                <footer class=\"content-footer\">\r\n                    Donald Trump Twitter Analysis By <a href=\"https://stefanzhang.com\" rel=\"nofollow\" target=\"_blank\">Stefan</a>\r\n                </footer>\r\n            </main>\r\n        </div>\r\n        <!-- The Loader. Is shown when pjax happens -->\r\n        <div class=\"loader-wrap hiding hide\">\r\n            <i class=\"fa fa-circle-o-notch fa-spin-fast\"></i>\r\n        </div>\r\n\r\n        <script>\r\n            vegaEmbed('#Pie', PiChart); // Add PieChart\r\n            vegaEmbed('#Line', LineChart); // Add LineChart\r\n            vegaEmbed('#Bar', BarChart); // Add BarChart\r\n            vegaEmbed('#Area', AreaChart); // Add AreaChart\r\n\r\n            //document.write();\r\n        </script>\r\n    </body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.php	(revision 662777f3985cae4f9964698d29be4093da5b0bc2)
++++ index.php	(date 1604078411090)
+@@ -3,6 +3,7 @@
+     <head>
+         <title>Donald Trump Twitter Dashboard -  Analytics </title>
+         <link href="css/application.min.css" rel="stylesheet">
++        <link href="css/site.css" rel="stylesheet">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+         <meta name="description" content="Donal Trump Twitter Dashboard">
+         <meta name="keywords" content="Donal Trump Twitter Dashboard">
+@@ -43,14 +44,14 @@
+                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                         <span class="fw-normal">Rendering Plots</span> <br>
+                         <div class="progress progress-xs mt-2">
+-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
++                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                         </div>
+                     </div>
+                     <div class="alert">
+                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                         <span class="fw-normal">Interaction</span> <br>
+                         <div class="progress progress-xs mt-2">
+-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
++                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                         </div>
+                     </div>
+                 </div>
+@@ -75,7 +76,7 @@
+                                 <header class="d-flex justify-content-between flex-wrap">
+                                     <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                         <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>
+-                                        Tweets <span class="fw-normal ml-xs">Collected</span>
++                                        Tweets <span class="fw-normal ml-xs">Info:</span>
+                                     </h4>
+                                 </header>
+                                 <div class="widget-body p-0">
+@@ -92,12 +93,11 @@
+                                 <header class="d-flex justify-content-between flex-wrap">
+                                     <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                         <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>
+-                                        With <span class="fw-normal ml-xs">Hashtage</span>
++                                        With <span class="fw-normal ml-xs">Sentiment</span>
+                                     </h4>
+                                 </header>
+-                                <div class="widget-body p-0">
+-                                    <h4 class="fw-semi-bold ml-lg mb-lg">#DonaldTrump, #TheRealDonaldTrump</h4>
+-                                </div>
++                                <div id="spinner">  </div>
++                                <div id="Pie"></div>
+                             </section>
+                         </div>
+                     </div>
+@@ -107,10 +107,12 @@
+                                 <header class="d-flex justify-content-between flex-wrap">
+                                     <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                         <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>
+-                                        With <span class="fw-normal ml-xs">Sentiment</span>
++                                        With <span class="fw-normal ml-xs">Hashtage</span>
+                                     </h4>
+                                 </header>
+-                                <div id="Pie"></div>
++                                <div class="widget-body p-0">
++                                    <h4 class="fw-semi-bold ml-lg mb-lg">#DonaldTrump, #TheRealDonaldTrump</h4>
++                                </div>
+                             </section>
+                         </div>
+                     </div>
+@@ -171,11 +173,11 @@
+         </div>
+ 
+         <script>
++
+             vegaEmbed('#Pie', PiChart); // Add PieChart
+             vegaEmbed('#Line', LineChart); // Add LineChart
+             vegaEmbed('#Bar', BarChart); // Add BarChart
+             vegaEmbed('#Area', AreaChart); // Add AreaChart
+-
+             //document.write();
+         </script>
+     </body>
+Index: js/LineChart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var LineChart = {\r\n    \"width\": 1000,\r\n    \"height\": 300,\r\n    \"description\": \"Line Chart\",\r\n    \"data\": {\"url\": \"tweets.csv\"},\r\n    \"mark\": {\r\n        \"type\": \"line\", //trail\r\n            \"point\": {\r\n            \"filled\": true,\r\n                \"fill\": \"black\"\r\n            },\r\n        \"interpolate\": \"monotone\",\r\n    },\r\n    \"format\": {\r\n        \"parse\": {\"time\": \"'%Y/%D/%H %H:%M'\"}\r\n    },\r\n    \"encoding\": {\r\n        \"x\": {\"timeUnit\": \"date\", \"field\": \"time\"},\r\n        \"y\": {\"aggregate\":\"count\", \"field\": \"sentiment\", \"type\": \"quantitative\"},\r\n        \"strokeWidth\":\"3\",\r\n        \"size\": {\"aggregate\":\"count\", \"field\": \"sentiment\", \"type\": \"quantitative\"},\r\n        \"color\": {\r\n            \"field\": \"sentiment\",\r\n            \"type\": \"nominal\",\r\n            \"scale\": {\r\n                \"domain\": [\"VERY_NEGATIVE\", \"NEGATIVE\", \"NEUTRAL\", \"POSITIVE\", \"VERY_POSITIVE\", \"NOT_UNDERSTOOD\"],\r\n                \"range\": [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\", \"#c7c7c7\"]\r\n                },\r\n            \"title\": \"Sentiment\"\r\n            },\r\n        \"tooltip\": [{\"aggregate\":\"count\", \"field\": \"sentiment\", \"type\": \"quantitative\"}, {\"field\": \"sentiment\", \"type\": \"ordinal\"}]\r\n    }\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- js/LineChart.js	(revision 662777f3985cae4f9964698d29be4093da5b0bc2)
++++ js/LineChart.js	(date 1604002988406)
+@@ -1,5 +1,5 @@
+ var LineChart = {
+-    "width": 1000,
++    "width": 700,
+     "height": 300,
+     "description": "Line Chart",
+     "data": {"url": "tweets.csv"},
+@@ -10,12 +10,13 @@
+                 "fill": "black"
+             },
+         "interpolate": "monotone",
++
+     },
+     "format": {
+         "parse": {"time": "'%Y/%D/%H %H:%M'"}
+     },
+     "encoding": {
+-        "x": {"timeUnit": "date", "field": "time"},
++        "x": {"timeUnit": "date", "field": "time", "type": "temporal"},
+         "y": {"aggregate":"count", "field": "sentiment", "type": "quantitative"},
+         "strokeWidth":"3",
+         "size": {"aggregate":"count", "field": "sentiment", "type": "quantitative"},
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1abcb361-7717-4c1e-9376-3b6e9c576a82\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/js/AreaChart.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/js/AreaChart.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/js/PiChart.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/js/PiChart.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Pull.Settings\">\r\n    <option name=\"BRANCH\" value=\"master\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1iyFIFBBRvjihopaZnpcC4X3p9X\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1abcb361-7717-4c1e-9376-3b6e9c576a82\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1602871844042</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1602871844042</updated>\r\n      <workItem from=\"1602871845967\" duration=\"12112000\" />\r\n      <workItem from=\"1603211442350\" duration=\"12541000\" />\r\n      <workItem from=\"1603230085594\" duration=\"703000\" />\r\n      <workItem from=\"1603308170863\" duration=\"38000\" />\r\n      <workItem from=\"1603655814330\" duration=\"141000\" />\r\n      <workItem from=\"1603658431147\" duration=\"3345000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Refactor\">\r\n      <created>1602883842868</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1602883842868</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Refactor\">\r\n      <created>1602884256918</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1602884256918</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"New data viz, refactor\">\r\n      <created>1603226158098</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603226158098</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"New data viz, refactor\">\r\n      <created>1603655863464</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603655863464</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Refactor\" />\r\n    <MESSAGE value=\"New data viz, refactor\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"New data viz, refactor\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"2244\" y=\"385\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603224602829\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"2244\" y=\"385\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1603224602829\" />\r\n    <state x=\"359\" y=\"186\" key=\"CommitChangelistDialog2\" timestamp=\"1603655862625\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"359\" y=\"186\" key=\"CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1603655862625\" />\r\n    <state x=\"700\" y=\"571\" width=\"607\" height=\"347\" key=\"Github.ShareDialog\" timestamp=\"1602883308621\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"700\" y=\"571\" width=\"607\" height=\"347\" key=\"Github.ShareDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1602883308621\" />\r\n    <state x=\"572\" y=\"331\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1602883338795\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"572\" y=\"331\" key=\"Github.UntrackedFilesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1602883338795\" />\r\n    <state x=\"2365\" y=\"606\" key=\"NewPhpFileDialog\" timestamp=\"1603224643089\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"2365\" y=\"606\" key=\"NewPhpFileDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1603224643089\" />\r\n    <state x=\"352\" y=\"367\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1603655866215\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"352\" y=\"367\" key=\"Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1603655866215\" />\r\n    <state x=\"618\" y=\"594\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1602884306796\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"618\" y=\"594\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1602884306796\" />\r\n    <state x=\"486\" y=\"368\" width=\"748\" height=\"664\" key=\"find.popup\" timestamp=\"1602884223476\">\r\n      <screen x=\"0\" y=\"0\" width=\"3440\" height=\"1400\" />\r\n    </state>\r\n    <state x=\"486\" y=\"368\" width=\"748\" height=\"664\" key=\"find.popup/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400\" timestamp=\"1602884223476\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 662777f3985cae4f9964698d29be4093da5b0bc2)
++++ .idea/workspace.xml	(date 1604079100366)
+@@ -2,8 +2,12 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/css/site.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/loader.gif" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/js/AreaChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AreaChart.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/counts.php" beforeDir="false" afterPath="$PROJECT_DIR$/counts.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/js/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LineChart.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/js/PiChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PiChart.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -18,6 +22,7 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="JavaScript File" />
++        <option value="CSS File" />
+       </list>
+     </option>
+   </component>
+@@ -45,7 +50,13 @@
+     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
++    <property name="list.type.of.created.stylesheet" value="CSS" />
+     <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Stefan\PhpstormProjects\data-viz" />
++    </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -60,7 +71,10 @@
+       <workItem from="1603230085594" duration="703000" />
+       <workItem from="1603308170863" duration="38000" />
+       <workItem from="1603655814330" duration="141000" />
+-      <workItem from="1603658431147" duration="3345000" />
++      <workItem from="1603658431147" duration="3956000" />
++      <workItem from="1603815530282" duration="1044000" />
++      <workItem from="1604002480334" duration="4928000" />
++      <workItem from="1604076909297" duration="2148000" />
+     </task>
+     <task id="LOCAL-00001" summary="Refactor">
+       <created>1602883842868</created>
+@@ -90,26 +104,33 @@
+       <option name="project" value="LOCAL" />
+       <updated>1603655863464</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Refactor">
++      <created>1603662700986</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1603662700986</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+   <component name="VcsManagerConfiguration">
++    <MESSAGE value="New data viz, refactor" />
+     <MESSAGE value="Refactor" />
+-    <MESSAGE value="New data viz, refactor" />
+-    <option name="LAST_COMMIT_MESSAGE" value="New data viz, refactor" />
++    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603224602829">
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224602829" />
+-    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1603655862625">
++    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1603662700201">
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+-    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603655862625" />
++    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603662700201" />
+     <state x="700" y="571" width="607" height="347" key="Github.ShareDialog" timestamp="1602883308621">
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+@@ -122,10 +143,10 @@
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+     <state x="2365" y="606" key="NewPhpFileDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224643089" />
+-    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603655866215">
++    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603662703470">
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+-    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603655866215" />
++    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603662703470" />
+     <state x="618" y="594" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602884306796">
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+@@ -134,5 +155,9 @@
+       <screen x="0" y="0" width="3440" height="1400" />
+     </state>
+     <state x="486" y="368" width="748" height="664" key="find.popup/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1602884223476" />
++    <state x="439" y="312" width="840" height="1034" key="search.everywhere.popup" timestamp="1604003128014">
++      <screen x="0" y="0" width="3440" height="1400" />
++    </state>
++    <state x="439" y="312" width="840" height="1034" key="search.everywhere.popup/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1604003128014" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: css/site.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- css/site.css	(date 1604078020350)
++++ css/site.css	(date 1604078020350)
+@@ -0,0 +1,10 @@
++#spinner
++{
++    position: fixed;
++    left: 0px;
++    top: 0px;
++    width: 100%;
++    height: 100%;
++    z-index: 9999;
++    background: url(loader.gif) 50% 50% no-repeat #ede9df;
++}
+\ No newline at end of file
