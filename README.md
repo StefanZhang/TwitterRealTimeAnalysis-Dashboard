@@ -45,15 +45,17 @@ Information is crucial to the function of a democratic society where well- infor
 * [PHP-5.6](https://www.php.net/releases/5_6_40.php)
 * [MySQL-5.6.49](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)
 * [VegaLite-4.16.8](https://vega.github.io/vega-lite/)
+* [PhpStorm](https://www.jetbrains.com/phpstorm/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Make sure you have tweets data pipeline setup like [this](https://github.com/StefanZhang/TwitterRealTimeAnalysis).
+Make sure you have tweets data pipeline setup like [this](https://github.com/StefanZhang/TwitterRealTimeAnalysis). 
+The tweets are saved in the MySQL database and formated correctly.
 
 ### Installation
 
-1. Clone the repo in a host
+1. Clone the repo into a host
 ```sh
 git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 ```
@@ -61,6 +63,13 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 
 3. End result: [Dashboard](https://sentiment.stefanzhang.com/)
 
+### Charts
+
+Null
+
+### Complete Tasks
+
+Null
 
 <!-- CONTRIBUTING -->
 ## Contributing
