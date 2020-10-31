@@ -65,9 +65,11 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 
 ### Charts
 
+Null
 
 ### Complete Tasks
 
+Null
 
 <!-- CONTRIBUTING -->
 ## Contributing
