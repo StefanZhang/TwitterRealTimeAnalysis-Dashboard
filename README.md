@@ -82,7 +82,23 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Schedule of Deliverables
+|Date  | Task | Description |
+|--|--| -- |
+| Week1 | Environment Setup | Configure the web environment, set up database, make sure the CSV is generating/loading properly.
+| Week2 | Create Data Viz I| Create the first version of data viz, including pie chart and line chart. 
+| Week3 | Create Data Viz II | Evaluate the data viz performance, create new viz if necessary. 
+| Week4 | Create Data Viz III | Polish the data viz, add user interaction/menu.
+| Week5 | Finalize Project | Finalize the project, make sure it ready for submission. 
 
+- Configure the web environment: Make sure the web hosting is all set, domain name set up the correct A record points to the web host.
+- Setup database: MySQL is appropriately setup.
+- CSV is generating/loading correctly: Make sure CSV can generate dynamically, and front-end frameworks can have access to them.
+- Create the first version of data viz: Create a pie chart and line chart based on the sketch.
+- Evaluate the data viz performance: Trying to figure out if the current data viz is effective, is there a better way?
+- Polish the data viz: Adjust the details of the data viz, front size is right, things are lined up...
+- Add user interaction/menu: Add interactions/menu accordingly, to enhance the data viz.
+- Finalize the project: Double check everything mentioned above.
 
 <!-- LICENSE -->
 ## License
