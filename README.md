@@ -63,11 +63,11 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 
 3. End result: [Dashboard](https://sentiment.stefanzhang.com/)
 
-### Charts
+## Charts
 
 Null
 
-### Complete Tasks
+## Complete Tasks
 
 Null
 
