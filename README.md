@@ -71,15 +71,26 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 ### Sentiment Pie Chart
 ![Pie.png](https://i.loli.net/2020/11/02/u8AS4JBqrovk9Ef.png)
 
+This Pie Chart displays the percentage of different sentiment respect to each other. 
+The Majority of the tweets about Trump is negative.
 
 ### Daily Information with Area Chart
 ![Area Chart.png](https://i.loli.net/2020/11/02/UI49knHZq5jpfwt.png)
 
+This Aria Chart displays the number of the tweets posted respect to the time of a day.
+Most of the tweets are posted in afternoon and night, namely before and after dinner.
+
 ### Trends with Line Chart
 ![Line.png](https://i.loli.net/2020/11/02/WGSLjabcnkHuQJh.png)
 
+This Line Chart displays the number of the tweets posted respect to date. 
+A decrease of negative tweets was showned after 10/22 and 10/23 which is the Third presidential debate.
+
 ### Device Information with Bar Chart
 ![Bar.png](https://i.loli.net/2020/11/02/5Y9rXz7kUiomLRw.png)
+
+This Bar Chart displays the number of the tweets posted respect to device.
+There are no clear correlation between the device people use with how they tweet.
 
 ## Complete Tasks
 
