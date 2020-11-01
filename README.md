@@ -68,7 +68,18 @@ git clone https://github.com/StefanZhang/TwitterRealTimeAnalysis-Dashboard.git
 
 ## Charts
 
-Null
+### Sentiment Pie Chart
+![Pie.png](https://i.loli.net/2020/11/02/u8AS4JBqrovk9Ef.png)
+
+
+### Daily Information with Area Chart
+![Area Chart.png](https://i.loli.net/2020/11/02/UI49knHZq5jpfwt.png)
+
+### Trends with Line Chart
+![Line.png](https://i.loli.net/2020/11/02/WGSLjabcnkHuQJh.png)
+
+### Device Information with Bar Chart
+![Bar.png](https://i.loli.net/2020/11/02/5Y9rXz7kUiomLRw.png)
 
 ## Complete Tasks
 
