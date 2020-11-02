@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1abcb361-7717-4c1e-9376-3b6e9c576a82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/AreaChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AreaChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/PiChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PiChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LineChart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +29,7 @@
   </component>
   <component name="ProjectId" id="1iyFIFBBRvjihopaZnpcC4X3p9X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -39,7 +40,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -61,6 +62,9 @@
       <workItem from="1603308170863" duration="38000" />
       <workItem from="1603655814330" duration="141000" />
       <workItem from="1603658431147" duration="3345000" />
+      <workItem from="1604160281994" duration="293000" />
+      <workItem from="1604160625662" duration="49000" />
+      <workItem from="1604347107005" duration="795000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor">
       <created>1602883842868</created>
@@ -90,7 +94,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603655863464</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updates on index">
+      <created>1604159065763</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604159065763</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updates on index">
+      <created>1604159172144</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604159172144</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,17 +117,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor" />
     <MESSAGE value="New data viz, refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="New data viz, refactor" />
+    <MESSAGE value="Updates on index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates on index" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603224602829">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2244" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224602829" />
-    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1603655862625">
+    <state x="359" y="186" key="CommitChangelistDialog2" timestamp="1604159171376">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603655862625" />
+    <state x="359" y="186" key="CommitChangelistDialog2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1604159171376" />
     <state x="700" y="571" width="607" height="347" key="Github.ShareDialog" timestamp="1602883308621">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -122,10 +141,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2365" y="606" key="NewPhpFileDialog/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603224643089" />
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603655866215">
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2" timestamp="1604159175976">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1603655866215" />
+    <state x="352" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-3840.-394.2560.1400@0.0.3440.1400" timestamp="1604159175976" />
     <state x="618" y="594" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602884306796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

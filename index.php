@@ -43,14 +43,14 @@
                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
                         <span class="fw-normal">Rendering Plots</span> <br>
                         <div class="progress progress-xs mt-2">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="alert">
                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
                         <span class="fw-normal">Interaction</span> <br>
                         <div class="progress progress-xs mt-2">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,6 @@
             vegaEmbed('#Bar', BarChart); // Add BarChart
             vegaEmbed('#Area', AreaChart); // Add AreaChart
 
-            //document.write();
         </script>
     </body>
 </html>
